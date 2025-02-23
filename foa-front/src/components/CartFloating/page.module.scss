@@ -1,0 +1,16 @@
+//file to add css property in float cart
+
+.float-container {
+    position: fixed;
+    right: 2.5rem;
+    bottom: 2.5rem;
+    z-index: 1000;
+  }
+  
+  .cart-container {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    right: 0;
+    bottom: 3rem;
+  }

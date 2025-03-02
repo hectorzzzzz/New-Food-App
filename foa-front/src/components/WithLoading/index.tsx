@@ -12,9 +12,11 @@ interface Props {
 export default function WithLoading({ children, loading, message }: Props) {
   if (loading) {
     return (
-      <div className='d-flex justify-content-center flex-column align-items-center my-5'>
-        <Spinner variant='primary' />
-        {!!message && <p className='mt-4'>{message}</p>}
+      <div className="d-flex justify-content-center align-items-center vh-100 bg">
+        <div className="text-center">
+          <Spinner variant="primary" />
+          {!!message && <p className="mt-4">{message}</p>}
+        </div>
       </div>
     );
   }

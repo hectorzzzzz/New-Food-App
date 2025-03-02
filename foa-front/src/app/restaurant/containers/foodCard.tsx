@@ -2,7 +2,7 @@
 
 import CardLayout from '@/components/CardLayout';
 import React, { ReactNode } from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 interface Props {
   children: ReactNode;
@@ -20,20 +20,18 @@ export default function FoodCard({
   image,
 }: Props) {
   return (
-    <Col
-      xs={12}
-      md={6}
-      xl={4}>
+    <Col xs={12} md={6} xl={4}>
       <CardLayout
         title={name}
         description={
-          <Row>
-            <Col xs={6}>{description}</Col>
-            <Col xs={6}>{price}</Col>
-          </Row>
+          <div>
+            <div>{description}</div>
+            <div>{price}</div>
+          </div>
         }
-        redirect=''
-        image={image}>
+        redirect=""
+        image={image}
+      >
         {children}
       </CardLayout>
     </Col>

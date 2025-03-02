@@ -1,4 +1,4 @@
-//file to store data in database
+// file to store data in database
 
 import { Types } from 'mongoose';
 import { IDish } from '../../model/dish';

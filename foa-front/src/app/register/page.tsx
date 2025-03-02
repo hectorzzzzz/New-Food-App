@@ -47,7 +47,7 @@ function Register() {
     <div className="">
       <div className="flex justify-center items-center h-screen bg-gray-200 w-screen">
         <div className="bg-white p-6 rounded-lg shadow-md w-80">
-          <h2 className="text-xl font-bold mb-4 text-center">Registration</h2>
+          <h2 className="text-xl font-bold mb-4 text-center text-black">Registration</h2>
 
           {error && <p className="text-red-500">{error}</p>} {/* Tampilkan error jika ada */}
 
@@ -82,7 +82,7 @@ function Register() {
           />
 
           <button
-            className={`w-full text-white p-2 rounded ${loading ? "bg-gray-400" : "bg-violet-500 hover:bg-violet-600"}`}
+            className={`w-full text-white p-2 rounded ${loading ? "bg-gray-400" : "bg-green-500 hover:bg-green-600"}`}
             onClick={handleRegister}
             disabled={loading}
           >

@@ -2,7 +2,7 @@
 
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Button, Col, ListGroup, Row } from 'react-bootstrap';
 import style from './page.module.scss';
 import { CartItem } from '@/types/restaurant';
@@ -15,17 +15,19 @@ interface Props {
 
 export default function CartFloating({ cartItems, restaurantId }: Props) {
   const [show, setShow] = useState(false);
+  const cartLength = useMemo(() => cartItems?.length || 0, [cartItems]);
 
   return (
     <div className={style['float-container']}>
       <div className='position-relative'>
         {show && (
           <div
-            className={`${style['cart-container']} rounded border border-primary-subtle bg-white shadow p-3 d-flex flex-column`}>
+            className={`${style['cart-container']} rounded border border-primary-subtle bg-white shadow p-3 d-flex flex-column`}
+          >
             <div className='flex-fill'>
-              {cartItems.length ? (
+              {cartLength > 0 ? (
                 <ListGroup className='list-group-flush my-n3'>
-                  {cartItems.map((item) => (
+                  {cartItems?.map((item) => (
                     <ListGroup.Item key={item._id}>
                       <Row className='align-items-center'>
                         <Col xs='auto'>
@@ -65,7 +67,8 @@ export default function CartFloating({ cartItems, restaurantId }: Props) {
         )}
         <Button
           className='shadow'
-          onClick={() => setShow((prev) => !prev)}>
+          onClick={() => setShow((prev) => !prev)}
+        >
           <i className='fe fe-shopping-cart'></i>
         </Button>
       </div>

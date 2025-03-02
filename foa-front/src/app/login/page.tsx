@@ -10,7 +10,7 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error] = useState("");
   const router = useRouter();
 
 
@@ -29,7 +29,7 @@ function Login() {
     <div className="">
       <div className="flex justify-center items-center h-screen bg-gray-200 w-screen">
         <div className="bg-white p-6 rounded-lg shadow-md w-80">
-          <h2 className="text-xl font-bold mb-4 text-center text-black">Login to Order</h2>
+          <h2 className="text-xl font-bold mb-4 text-center text-black">Login to Order Food</h2>
 
           {error && <p className="text-red-500">{error}</p>} {/* Tampilkan error jika ada */}
 
@@ -50,7 +50,7 @@ function Login() {
           />
 
           <button
-            className={`w-full text-white p-2 rounded ${loading ? "bg-gray-400" : "bg-violet-500 hover:bg-violet-600"}`}
+            className={`w-full text-white p-2 rounded ${loading ? "bg-gray-400" : "bg-green-500 hover:bg-green-600"}`}
             onClick={handleLogin}
             disabled={loading}
           >
@@ -58,7 +58,7 @@ function Login() {
           </button>
           
           <p className="text-center mt-4 text-black">
-          No account? <Link href="/register" className="text-violet-500">Register here</Link>
+          New user? <Link href="/register" className="text-green-500 hover:text-green-600">Register here</Link>
           </p>
         </div>
       </div>

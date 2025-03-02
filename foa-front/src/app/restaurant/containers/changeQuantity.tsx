@@ -1,6 +1,6 @@
 //file to handle quantity change in cart
 
-'use client'
+'use client';
 
 import { Dish } from '@/types/restaurant';
 import React from 'react';
@@ -20,27 +20,29 @@ export default function ChangeQuantity({
   handleChangeCart,
 }: Props) {
   return (
-    <Row className='justify-content-center'>
-      <Col xs='auto'>
+    <Row className="justify-content-center">
+      <Col xs="auto">
         <Button
           disabled={disabled || quantity === 0}
           onClick={() => handleChangeCart(dish._id, quantity - 1)}
-          variant='outline-primary'>
+          variant="outline-primary"
+        >
           -
         </Button>
       </Col>
-      <Col xs='auto'>
+      <Col xs="auto">
         <Form.Control
           disabled
           value={quantity || 0}
-          className='text-center px-0'
+          className="text-center px-0"
         />
       </Col>
-      <Col xs='auto'>
+      <Col xs="auto">
         <Button
           disabled={disabled}
           onClick={() => handleChangeCart(dish._id, quantity + 1)}
-          variant='outline-primary'>
+          variant="outline-primary"
+        >
           +
         </Button>
       </Col>

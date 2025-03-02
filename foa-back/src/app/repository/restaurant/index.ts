@@ -98,6 +98,14 @@ export async function createNewOrder(
     await order.save();
 }
 
-export function getOrderByUserId(user: string) {
-    return Order.find({ user }).populate('restaurant').sort({ createdAt: -1 });
+export async function getOrderByUserId(user: string) {
+  const orders = await Order.find({ user })
+      .populate({
+          path: 'restaurant',
+          select: 'name alamat image', 
+      })
+      .sort({ createdAt: -1 });
+
+  console.log('Orders with populated restaurant:', JSON.stringify(orders, null, 2));
+  return orders;
 }

@@ -30,10 +30,10 @@ function Register() {
     const router = useRouter();
 
     async function handleRegister() {
-        if (password !== confirmPassword) {
-          return alert('Password harus sama!');
-        }
-        updateState({ loading: true });
+        // if (password !== confirmPassword) {
+        //   return alert('Password harus sama!');
+        // }
+        // updateState({ loading: true });
         try {
           await register({ username, password });
           router.push('/login');
@@ -54,7 +54,7 @@ function Register() {
           <input
             type="text"
             placeholder="Username"
-            className="w-full p-2 mb-2 border rounded text-white"
+            className="w-full p-2 mb-2 border rounded text-black"
             value={username}
             onChange={(e) =>
                 updateState({ username: e.currentTarget.value })
@@ -64,7 +64,7 @@ function Register() {
           <input
             type="password"
             placeholder="Password"
-            className="w-full p-2 mb-4 border rounded text-white"
+            className="w-full p-2 mb-4 border rounded text-black"
             value={password}
             onChange={(e) =>
                 updateState({ password: e.currentTarget.value })
@@ -74,7 +74,7 @@ function Register() {
           <input
             type="password"
             placeholder="Confirm Password"
-            className="w-full p-2 mb-4 border rounded text-white"
+            className="w-full p-2 mb-4 border rounded text-black"
             value={password}
             onChange={(e) =>
                 updateState({ confirmPassword: e.currentTarget.value })
